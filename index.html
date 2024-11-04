@@ -12,6 +12,14 @@
   gtag('js', new Date());
 
   gtag('config', 'G-D685WZ6N88');
+     function trackButtonClick(activity) {
+            // Send an event to Google Analytics
+            gtag('event', 'click', {
+                'event_category': 'Button Click',
+                'event_label': activity,
+                'value': 1
+            });
+        }
 </script>
 </head>
 <body>
