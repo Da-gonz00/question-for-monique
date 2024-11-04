@@ -24,23 +24,26 @@
   <div class="gif_container">
                  <img src="snoopy-question.webp" alt="snoopy-question">
         </div> 
-        <div class="buttons">
-            <button class="btn" id="nahButton" onclick="nextPage()">Arcade</button>
-            <button class="btn" id="nahButton" onclick="nextPage()">Golf</button>
-            <script>
-              function trackButtonClick(activity) {
+       <div class="buttons">
+            <button class="btn" onclick="trackButtonClick('Arcade')">Arcade</button>
+            <button class="btn" onclick="trackButtonClick('Golf')">Golf</button>
+        </div>
+    </div>
+
+    <script>
+        function trackButtonClick(activity) {
             // Send an event to Google Analytics
             gtag('event', 'click', {
                 'event_category': 'Button Click',
                 'event_label': activity,
                 'value': 1
             });
+
+            // Navigate to the next page after a short delay
+            setTimeout(() => {
+                window.location.href = "letsgo.html";
+            }, 200);  // Adjust delay as needed
         }
-                function nextPage(){
-                    window.location.href="letsgo.html";
-                }
-            </script>
-        </div>
-    </div>
+    </script>
 </body> 
 </html>
