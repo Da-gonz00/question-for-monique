@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question for Monique</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="text_container">
+            <h1 class="header_text">What's up Monique!</h1>
+            <h2>I was just wondering if you wanted to do something this Sunday? (or whenever you're free)</h2>
+        </div>
+        <div class="gif_container">
+            <img src="snoopy-camping.webp" alt="insert gif">
+        </div>
+        <div class="buttons">
+            <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+          <button class="btn" id="noButton" onmouseover="moveButton()" onclick="shrinkButton()">No</button>
+        </div>
+    </div>
+    <script>
+        function nextPage() {
+            window.location.href = "yes.html";
+        }
+       
+       /* function shrinkButton() {
+            var noButton = document.getElementById('noButton');
+            var currentWidth = noButton.offsetWidth;
+            var currentHeight = noButton.offsetHeight;
+            noButton.style.width = currentWidth * 0.9 + 'px';
+            noButton.style.height = currentHeight * 0.9 + 'px';
+            noButton.style.fontSize = parseInt(window.getComputedStyle(noButton).fontSize) * 0.9 + 'px';
+            noButton.style.padding = parseInt(window.getComputedStyle(noButton).paddingTop) * 0.9 + 'px ' +
+                                     parseInt(window.getComputedStyle(noButton).paddingRight) * 0.9 + 'px';
+        } */
+        function moveButton() {
+            var noButton = document.getElementById('noButton');
+
+            // Set inline CSS for smooth transition
+            noButton.style.transition = 'left 0.3s ease, top 0.3s ease';
+
+            // Get the window dimensions
+            var windowWidth = window.innerWidth;
+            var windowHeight = window.innerHeight;
+
+            // Generate random positions within the window
+            var randomX = Math.floor(Math.random() * (windowWidth - noButton.offsetWidth));
+            var randomY = Math.floor(Math.random() * (windowHeight - noButton.offsetHeight));
+
+            // Move the button to the new random position
+            noButton.style.position = 'absolute';
+            noButton.style.left = randomX + 'px';
+            noButton.style.top = randomY + 'px';
+        }
+    </script>
+</body>
+</html>
