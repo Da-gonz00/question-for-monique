@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Question for Monique</title>
     <link rel="stylesheet" href="./yes.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D685WZ6N88"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-D685WZ6N88');
+</script>
 </head> 
 <body>
     <div class="container">
@@ -21,9 +28,17 @@
             <button class="btn" id="nahButton" onclick="nextPage()">Arcade</button>
             <button class="btn" id="nahButton" onclick="nextPage()">Golf</button>
             <script>
-                function nextPage(){
-                    window.location.href="letsgo.html";
-                }
+              function trackButtonClick(activity) {
+            // Send an event to Google Analytics
+            gtag('event', 'click', {
+                'event_category': 'Button Click',
+                'event_label': activity,
+                'value': 1
+            });
+            
+            // Redirect to the next page
+            window.location.href = "letsgo.html";
+        }
             </script>
         </div>
     </div>
